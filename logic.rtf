@@ -1,0 +1,234 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1046{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset1 Cambria Math;}}
+{\*\generator Riched20 10.0.22621}{\*\mmathPr\mmathFont1\mwrapIndent1440 }\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\qc\b\f0\fs40\lang22 Combust\'edvel\b0\fs22\par
+
+\pard\sa200\sl276\slmult1 Quantidade de combust\'edvel x CO2 emitido por unidade.\par
+considerando (em media)  que:\par
+Gasolina: 2,31 kg CO2e/litro\par
+Diesel: 2,68 kg CO2e/litro\par
+Etanol: 1,56 kg CO2e/litro\par
+GNV (G\'e1s Natural Veicular): 1,99 kg CO2e/m\'b3\par
+LP (G\'e1s Liquefeito de Petr\'f3leo): 1,50 kg CO2e/kg\par
+G\'e1s Natural Seco: 1,93 kg CO2e/m\'b3\par
+\'d3leo Combust\'edvel: 3,11 kg CO2e/litro\par
+\b exemplo:  \b0 100 litros de gasolina consumidos\par
+100 x 2,31 = 231 CO2e\par
+e para converter para tCO2e (toneladas de di\'f3xido de carbono equivalente) que \'e9 a medida utilizada no painel da compensa.eco: CO2e/1000\par
+231/1000 = 0,231 tCO2e\par
+para obter as emiss\'f5es totais basta somar o tCO2e de todos as inser\'e7\'f5es e para obter o equivalente em arvores: emiss\'f5es totais / 0,163\par
+
+\pard\sa200\sl276\slmult1\qc\b\fs40 Deslocamento casa-trabalho\par
+
+\pard\sa200\sl276\slmult1\b0\fs22 Primeiro \'e9 preciso obter a quantidade de dias que o funcionario trabalhou no ano, esse dado pode ser coletado de duas formas:\par
+informado pelo proprio usuario: para isso \'e9 necess\'e1rio habilitar a fun\'e7\'e3o em configura\'e7\'e3o de medi\'e7\'f5es, uma vez habilitada, o usu\'e1rio poder\'e1 preencher a quantidade de dias que o funcionario trabalhou individualmente para cada m\'eas, que ser\'e3o somados posteriormente.\par
+se essa op\'e7\'e3o n\'e3o estiver habilitada, o sistema calcular\'e1 a quantidade de dias que o funcion\'e1rio trabalhou com base nos campos data de admiss\'e3o e data desligamento. Se a data de admiss\'e3o n\'e3o estiver preenchida, consideraremos que o funcion\'e1rio foi admitido antes do ano em quest\'e3o, utilizando 01/01 desse ano como data de in\'edcio. Se a data de desligamento n\'e3o estiver preenchida, assumiremos que o funcion\'e1rio ainda estava empregado no final do ano em quest\'e3o, utilizando 31/12 desse ano (Para o ano atual, usaremos a data atual como refer\'eancia).\par
+para exemplificar vou utilizar 252 dias por ser o padr\'e3o de dias \'fateis no ano do brasil.\par
+em seguida colete as frequ\'eancia (%) de uso de cada meio de transporte no deslocamento casa-trabalho (ida e volta assumo) naquele ano, e/ou a frequ\'eancia (%) de dias trabalhados em home-office naquele ano.\par
+em caso da frequ\'eancia trabalhada em home-office n\'e3o ser nula, \'e9 preciso calcular o consumo de energia do funcionario durante expediente, vamos assumir o valor de 40%:\par
+
+\pard\li720\sa200\sl276\slmult1 40% de 252 = 100.8 (arredondando 101 dias no ano)\par
+agora \'e9 necessario calcular o consumo de energia em kWh, se assumirmos que um computador desktop consome cerca de 0,1 kWh (quilowatt-hora) de eletricidade por hora e um laptop consome cerca de 0,03 kWh por hora, e considerando o uso de luzes e outros dispositivos eletr\'f4nicos, podemos estimar uma m\'e9dia de consumo de eletricidade durante 8 horas de trabalho em torno de \ul 1\ulnone .5 kW gastos por dia.\par
+101 dias x \ul 1\ulnone .5 kW  = 151.5kW consumidos por ano em home-office\par
+agora com o valor do consumo total \'e9 necessario calcular o equivalente em CO2e, usando essa formula: consumo total  \'d7 CO2/kW (No brasil o valor m\'e9dio \'e9 de aproximadamente 0,4 kg CO2 por kWh), exemplo: \par
+151.5kW/ano \'d7 0.4 kg CO2/kWh = 60.6 kg CO2e\ul .\par
+
+\pard\sa200\sl276\slmult1\ulnone agora em rela\'e7\'e3o a frequ\'eancia de uso de cada meio de transporte no deslocamento casa-trabalho, primeiro \'e9 preciso calcular a distancia percorrida no trajeto, vamos usar 20km como exemplo, tamb\'e9m seria necessario conhecer o consumo m\'e9dio de combust\'edvel do ve\'edculo em quest\'e3o, com isso basta usar a formula: (dist\'e2ncia percorrida em km) / (km percorrido por litro), exemplo:\par
+
+\pard\li720\sa200\sl276\slmult1 Para um carro:\par
+
+\pard\li1440\sa200\sl276\slmult1 Gasolina: = 20(km)/10(km/L) = 2litros\par
+Etanol: = 20(km)/7(km/L) = 2.85litros\par
+Diesel: = 20(km)/15(km/L) = 1.33litros\par
+GNV (G\'e1s Natural Veicular): = 20(km)/0.2(km/m\'b3) = 1.33litros\par
+
+\pard\sa200\sl276\slmult1\tab Para uma moto:\par
+
+\pard\li1440\sa200\sl276\slmult1 Gasolina: = 20(km)/20(km/L) = 1litros\par
+Etanol: = 20(km)/15(km/L) = 1.33litros\par
+
+\pard\sa200\sl276\slmult1 ap\'f3s obter o gasto em litros do trajeto basta usar a mesma logica da emiss\'e3o do combust\'edvel para obter o CO2 emitido:\par
+para exemplo vamos usar um funcionario que ultiliza um carro movido a gasolina todos os dias para ir e voltar do trabalho, que fica a 50km da sua casa:\par
+(50(km)/10(km/L) x 2 (ida e volta)) = 10 litros \par
+considerando que para a gasolina em media s\'e3o gastos 2,31 kg CO2/litro, esse funcionario emite 23.1 kg CO2 por dia de trabalho presencial, j\'e1 que 101 dias do ano s\'e3o trabalhos em homeoffice, presencialmente restam 151 dias:\par
+ 23.1 x 151: 3488.1 kg CO2e\par
+No final basta somar todos o CO2 emitido em home-office com o  CO2 emitido no deslocamento ao trabalho e depois converter para tCO2e.\par
+sobre os demais meios de deslocamento disponiveis:\par
+Taxi ou aplicativo: mesmo calculo, como n\'e3o \'e9 possivel saber qual combustivel \'e9 usado pelos motoristas, indico usar os valores de gasolina por ser a mais comum. \par
+Bicicleta ou a p\'e9: CO2 emitido deve ser nulo.\par
+\'d4nibus/trem ou metro/balsa: geralmente usam diesel, consumindo em media 5km/L (\'d4nibus), 3km/L (trem ou metro) e 1.5km/L (balsa).\par
+Carona com outro funcion\'e1rio: pela minha logica CO2 emitido nulo, j\'e1 que o consumo seria calculado somente e apenas em cima do funcion\'e1rio dono do veiculo.\par
+Transporte da empresa: pela minha logica CO2 emitido nulo, acredito que ao oferecer transporte a empresa muitas vezes desloque mais de um funcionario no mesmo veiculo e por isso o calculo deve ser feito na formulario de viagens.\par
+caso n\'e3o se saiba os meios de transporte do funcionario, assumir o uso mais comum que seria carro gasolina.\par
+
+\pard\sa200\sl276\slmult1\qc\b\fs40 Energia\par
+
+\pard\sa200\sl276\slmult1\b0\fs22 para realizar a medi\'e7\'e3o de emiss\'f5es de energia, aplique essa formula: Consumo da rede (kwh) \'d7 CO2/kW (No brasil o valor m\'e9dio \'e9 de aproximadamente 0,4 kg CO2 por kWh), exemplo:\par
+26 kwh \'d7 0.4 kg CO2/kWh = 10.4 CO2e\par
+caso a empresa utilize energia solar (nesse caso \'e9 necess\'e1rio habilitar em configura\'e7\'e3o de medi\'e7\'f5es) e n\'e3o energia convencional (sendo 0 ou nulo o consumo da rede) o CO2e \'e9 nulo mas caso ambas sejam usadas em conjunto h\'e1 um redu\'e7\'e3o no CO2 emitido pela energia convencional, obtido por:\par
+energia solar consumida(kWh)/soma do consumo de ambas(kWh), exemplo:\lang1046\par
+\lang22 fonte convencional: 26 kwh \par
+\lang1046 energia solar: 15 kwh\lang22\par
+26/(26+15) = 0.63 (63% da energia solar)\par
+agora basta calcular: CO2e da fonte convencional (10.4) - (CO2e da fonte convencional (10.4) \'d7 Percentual de energia solar utilizada (0.63)): 10.4 - 6.5 = 3.9CO2e e no final basta converter para tCO2e.\lang1046\par
+
+\pard\sa200\sl276\slmult1\qc\b\fs40\lang22 Viagens\par
+
+\pard\sa200\sl276\slmult1\b0\fs22 primeiro deve-se calcular a dist\'e2ncia entre origem e destino e saber quantos km s\'e3o percorridos a cada 1 litro gasto por modal, vou fornecer estimativas gerais que encontrei: \par
+carro: 10km/L (gasolina)\par
+avi\'e3o : 4km/L (querosene de avia\'e7\'e3o)\par
+trem: 3km/L (diesel)\par
+\'f4nibus: 5km/L (diesel)\par
+balsa: 1.5km/L (diesel)\par
+agora \'e9 necessaria saber quanto de CO2 \'e9 emitido por litro gasto, considerando (em media) que:\par
+gasolina: 2,31 kg CO2/litro\par
+diesel: 2,68 kg CO2/litro\par
+Querosene de avia\'e7\'e3o: 2,70kg CO2/litro\par
+vamos supor que \'e9 uma viagem de avi\'e3o de 13000km:\par
+13000/4 = 3250 litros\par
+3250/2.70 = 1203.70 CO2e \par
+ap\'f3s isso divida o valor pelo numero de viajante e caso se trate de uma viagem ida e volta tambem multiplicar por 2.\par
+tambem \'e9 importante ter checar quanto de CO2 foi emitido na dura\'e7\'e3o da hospedagem (caso haja hospedagem). Para um hotel de categoria m\'e9dia a alta, estima-se que a emiss\'e3o m\'e9dia de CO2 por noite de estadia por quarto varia entre 15 kg a 30 kg de CO2. J\'e1 para um hotel de categoria mais econ\'f4mica ou com pr\'e1ticas sustent\'e1veis, a emiss\'e3o m\'e9dia pode ser menor, variando entre 5 kg a 15 kg de CO2 por noite de estadia cada quarto, podemos assumir a media de 15kg. Ent\'e3o: 15 x noite x quarto, exemplo:\par
+1 unico viajante, em 1 unico quarto por 5 noites: 15 x 1 x 5 = 75 CO2e\par
+2 viajantes, em 1 unico quarto por 3 noites: 15 x 1 x 3 = 45 CO2e\par
+5 viajantes, em 4 quartos por 2 noites: 15 x 4 x 2 = 120 CO2e\par
+para terminar basta somar o CO2 emitido na dura\'e7\'e3o da hospedagem com o CO2 emitido na viagem e converter para tCO2e.\par
+\par
+
+\pard\sa200\sl276\slmult1\qc\b\fs40 emiss\'f5es fugitivas\par
+
+\pard\sa200\sl276\slmult1\b0\fs22\lang1046 para calcular as emiss\'f5es fugitivas, \'e9 preciso ter os fatores de emiss\'e3o de cada tipo de g\'e1s, ou seja quantas kg de CO2 s\'e3o emitidos por capacidade de g\'e1s de cada equipamento:\par
+Di\'f3xido de Carbono (CO2): 1000 kg\par
+Metano (CH4): 25000 kg\par
+\'d3xido Nitroso (N2O): 298000 kg\par
+R134a: Cerca de 1300000 kg\par
+R600a: Cerca de 3200 kg\par
+R290: Cerca de 3300 kg\par
+R404A: Cerca de 3920000 kg\par
+R507A: Cerca de 3980000 kg\par
+R717 (Am\'f4nia): Cerca de 30 kg\par
+R452A: Cerca de 2140000 kg\par
+R744 (Di\'f3xido de Carbono): 1000 kg\par
+R22: Cerca de 1760000 kg\par
+R123: Cerca de 77000 kg\par
+R410A: Cerca de 2088000 kg\par
+R32: Cerca de 675000 kg\par
+R1234yf: Cerca de 4000 kg\par
+HFC-227ea: Cerca de 3220000 kg\par
+HFC-236fa: Cerca de 9810000 kg\par
+HFC-125: Cerca de 3350000 kg\par
+para exemplo vamos usar o R123, supondo que o usu\'e1rio informou que a capacidade de g\'e1s de cada equipamento \'e9 de 44kg e que a quantidade de equipamentos \'e9 5, a formula seria a seguinte:\par
+(capacidade de g\'e1s * kg de co2e) * quantidade de equipamentos: \par
+(44 * 77000) * 5 = 16940000 CO2e\par
+caso o valor de \b Equipamento comprado esse ano \b0 e/ou \b Equipamento descartado esse ano\b0  for diferente de nulos/vazio, \'e9 necessario incluir os dias de uso desse equipamento, calculando apartir dos campos \b Data da compra \b0 (se vazio assumir a dia e mes 01/01 pois foi comprado em anos anteriores)\b  \b0 e/ou \b Data do descarte \b0 (se vazio considerar que ainda esta em uso ent\'e3o assumir o dia e mes atual). supondo o valor de 200 dias de uso, seria necessario dividir do CO2e por 365 e apos isso multiplicar pelos dias de uso: (16940000/365)*200 = 9282190 CO2e\par
+\par
+
+\pard\sa200\sl276\slmult1\qc\b\fs40\lang22 emiss\'f5es de frete\par
+
+\pard\sa200\sl276\slmult1\b0\fs22 para come\'e7ar \'e9 necess\'e1rio calcular a distancia entre o local de partida e o local de destino, a seguir \'e9 preciso identificar qual o modal pois cada um possui peculiaridades no calculo, sendo eles: terrestre, a\'e9reo e mar\'edtimo.\par
+- \b\fs28 Terrestre\b0\fs22 :\par
+
+\pard\li720\sa200\sl276\slmult1 Vamos primeiro identificar qual o veiculo e combust\'edvel usado para realizar o calculo de co2e, abaixo um guia referente as combina\'e7\'f5es diante das op\'e7\'f5es dispon\'edveis:\par
+Motocicleta:\par
+\f1\u10625?\f0  Gasolina: Aproximadamente 0,12 kg de CO2 por quil\'f4metro percorrido.\par
+\f1\u10625?\f0  Diesel: Cerca de 0,14 kg de CO2 por quil\'f4metro.\par
+\f1\u10625?\f0  Etanol: Em m\'e9dia, 0,09 kg de CO2 por quil\'f4metro.\par
+\f1\u10625?\f0  GNV: Aproximadamente 0,10 kg de CO2 por quil\'f4metro.\par
+Van - PBT/Van - PBT at\'e9 1,3 toneladas:\par
+\f1\u10625?\f0  Gasolina: Cerca de 0,25 kg de CO2 por quil\'f4metro.\par
+\f1\u10625?\f0  Diesel: Em torno de 0,28 kg de CO2 por quil\'f4metro.\par
+\f1\u10625?\f0  Etanol: Aproximadamente 0,20 kg de CO2 por quil\'f4metro.\par
+\f1\u10625?\f0  GNV: Em m\'e9dia, 0,22 kg de CO2 por quil\'f4metro.\par
+Van - PBT 1,3 a 1,7 toneladas:\par
+\f1\u10625?\f0  Gasolina: Cerca de 0,25 kg de CO2 por quil\'f4metro.\par
+\f1\u10625?\f0  Diesel: Em torno de 0,28 kg de CO2 por quil\'f4metro.\par
+\f1\u10625?\f0  Etanol: Aproximadamente 0,20 kg de CO2 por quil\'f4metro.\par
+\f1\u10625?\f0  GNV: Em m\'e9dia, 0,22 kg de CO2 por quil\'f4metro.\par
+Van - PBT 1,7 a 3,5 toneladas:\par
+\f1\u10625?\f0  Gasolina: Cerca de 0,25 kg de CO2 por quil\'f4metro.\par
+\f1\u10625?\f0  Diesel: Em torno de 0,28 kg de CO2 por quil\'f4metro.\par
+\f1\u10625?\f0  Etanol: Aproximadamente 0,20 kg de CO2 por quil\'f4metro.\par
+\f1\u10625?\f0  GNV: Em m\'e9dia, 0,22 kg de CO2 por quil\'f4metro.\par
+Caminh\'e3o - PBT:\par
+\f1\u10625?\f0  Diesel: Em m\'e9dia, 0,32 kg de CO2 por quil\'f4metro.\par
+\f1\u10625?\f0  Etanol: Cerca de 0,27 kg de CO2 por quil\'f4metro.\par
+\f1\u10625?\f0  GNV: Aproximadamente 0,29 kg de CO2 por quil\'f4metro.\par
+Caminh\'e3o r\'edgido - PBT:\par
+\f1\u10625?\f0  Diesel:\par
+3,5 a 7,5 toneladas: Aproximadamente 0,36 kg de CO2 por quil\'f4metro.\par
+7,5 a 17 toneladas: Cerca de 0,45 kg de CO2 por quil\'f4metro.\par
+Acima de 17 toneladas: Em torno de 0,55 kg de CO2 por quil\'f4metro.\par
+\f1\u10625?\f0  Etanol:\par
+3,5 a 7,5 toneladas: Aproximadamente 0,32 kg de CO2 por quil\'f4metro.\par
+7,5 a 17 toneladas: Cerca de 0,40 kg de CO2 por quil\'f4metro.\par
+Acima de 17 toneladas: Em torno de 0,49 kg de CO2 por quil\'f4metro.\par
+\f1\u10625?\f0  GNV:\par
+3,5 a 7,5 toneladas: Cerca de 0,34 kg de CO2 por quil\'f4metro.\par
+7,5 a 17 toneladas: Em m\'e9dia, 0,42 kg de CO2 por quil\'f4metro.\par
+Acima de 17 toneladas: Aproximadamente 0,51 kg de CO2 por quil\'f4metro.\par
+Caminh\'e3o articulado - PBT:\par
+\f1\u10625?\f0  Diesel:\par
+3,5 a 33 toneladas: Aproximadamente 0,5 kg de CO2 por quil\'f4metro.\par
+Acima de 33 toneladas: Cerca de 0,6 kg de CO2 por quil\'f4metro.\par
+\f1\u10625?\f0  Etanol:\par
+3,5 a 33 toneladas: Em m\'e9dia, 0,45 kg de CO2 por quil\'f4metro.\par
+Acima de 33 toneladas: Aproximadamente 0,54 kg de CO2 por quil\'f4metro.\par
+\f1\u10625?\f0  GNV:\par
+3,5 a 33 toneladas: Cerca de 0,47 kg de CO2 por quil\'f4metro.\par
+Acima de 33 toneladas: Em torno de 0,57 kg de CO2 por quil\'f4metro.\par
+Vamos usar um exemplo onde a distancia entre partida e destino \'e9 de 1800km, para o frete foi usado um Caminh\'e3o r\'edgido - PBT de 7,5 a 17 toneladas, esse veiculo usou GNV como combustivel que emite aproximadamente 0,32 kg de CO2 por km\par
+1800 * 0.32 = 576 CO2e\par
+aparte disso, h\'e1 outras duas variaveis que podem influencia no CO2e: Peso total transportado(kg) e Volume dos produtos(m\'b3) (opcional), para cada kg transportado h\'e1 uma emiss\'e3o de CO2 adicional assim como para cada m\'b3 transportado, abaixo um guia referente as emissoes dependendo do tipo de veiculo usado:\par
+Motocicleta:\par
+\f1\u10625?\f0  Emiss\'e3o de CO2 adicional por kg: 0,005 kg\par
+\f1\u10625?\f0  Emiss\'e3o de CO2 adicional por m\'b3: 0,0025 kg\par
+Van - PBT (todos os tipos):\par
+\f1\u10625?\f0  Emiss\'e3o de CO2 adicional por kg: 0,02 kg\par
+\f1\u10625?\f0  Emiss\'e3o de CO2 adicional por m\'b3: 0,01 kg\par
+Caminh\'e3o - PBT:\par
+\f1\u10625?\f0  Emiss\'e3o de CO2 adicional por kg: 0,03 kg\par
+\f1\u10625?\f0  Emiss\'e3o de CO2 adicional por m\'b3: 0,015 kg\par
+Caminh\'e3o r\'edgido - PBT 3,5 a 7,5 ton:\par
+\f1\u10625?\f0  Emiss\'e3o de CO2 adicional por kg: 0,0325 kg\par
+\f1\u10625?\f0  Emiss\'e3o de CO2 adicional por m\'b3: 0,02 kg\par
+Caminh\'e3o r\'edgido - PBT 7,5 a 17 ton:\par
+\f1\u10625?\f0  Emiss\'e3o de CO2 adicional por kg: 0,0105 kg\par
+\f1\u10625?\f0  Emiss\'e3o de CO2 adicional por m\'b3: 0,02 kg\par
+Caminh\'e3o r\'edgido - PBT acima de 17 ton:\par
+\f1\u10625?\f0  Emiss\'e3o de CO2 adicional por kg: 0,02 kg\par
+\f1\u10625?\f0  Emiss\'e3o de CO2 adicional por m\'b3: 0,01 kg\par
+Caminh\'e3o articulado - PBT 3,5 a 33 ton:\par
+\f1\u10625?\f0  Emiss\'e3o de CO2 adicional por kg: 0,05 kg\par
+\f1\u10625?\f0  Emiss\'e3o de CO2 adicional por m\'b3: 0,025 kg\par
+Caminh\'e3o articulado - PBT acima de 33 ton:\par
+\f1\u10625?\f0  Emiss\'e3o de CO2 adicional por kg: 0,055 kg\par
+\f1\u10625?\f0  Emiss\'e3o de CO2 adicional por m\'b3: 0,0275 kg\par
+assumindo que o kg transportado \'e9 de 1500kg e o m\'b3 transportado \'e9 de 63m\'b3 :\par
+1500 kg * 0.0105 CO2e/kg = 15.75 CO2e\par
+63 m\'b3 *0.02 CO2e/m\'b3 = 1.26 CO2e\par
+no final basta somar todo o CO2e (\lang1046 CO2e no deslocamento + CO2e do kg transportado  + CO2e do m\'b3 transportado): 576 + 15.75 + 1.26 = 593.01 CO2e\lang22\par
+
+\pard\sa200\sl276\slmult1 - \b\fs28 A\'e9reo \b0\fs22 :\par
+
+\pard\li720\sa200\sl276\slmult1 Da mesma forma que no modal anteriror, \'e9 necessario calcular a distancia entre o local de partida e o local de destino, em rela\'e7\'e3o a avia\'e7\'e3o comercial s\'e3o emitidos em media aproximadamente 3,15 kg de CO2 por litro queimado (querosene de avia\'e7\'e3o), onde s\'e3o gastos em media aproximadamente 3,5 litros para percorrer um quil\'f4metro, em rela\'e7\'e3o a emiss\'e3o de CO2 adicional por kg transportado s\'e3o emitidos em media: 0,02 para kg e em rela\'e7\'e3o a emiss\'e3o de CO2 adicional por m\'b3 transportado s\'e3o emitidos em media:  0,01 para m\'b3.\par
+vamos supor uma percurso de 7322 km, onde a carga transportada tem peso de  53000 kg e volume de 138 m\'b3:\par
+o primeiro passo seria calcular o total de litros gastos na viagem:  7322 km * 3.5 litros/km  = 25637 litros\par
+no segundo passo basta calcular a quantidade total de CO2 emitida: 25637 litros * 3.15 CO2e/litro = 80751.55 CO2e\par
+a seguir calcule o CO2e do peso transportado: 53000 kg * 0.02 CO2e/kg = 1060 CO2e\par
+e tamb\'e9m do volume transportado: 138 m\'b3 * 0.01 CO2e/m\'b3 = 1.38 CO2e\par
+\lang1046 no final basta somar todo o CO2e (CO2e no deslocamento + CO2e do kg transportado  + CO2e do m\'b3 transportado):  \lang22 80751.55 + 1060 + 1.38 = 81812.93 CO2e\par
+
+\pard\sa200\sl276\slmult1 - \b\fs28 Mar\'edtimo\b0\fs22 :\par
+
+\pard\li720\sa200\sl276\slmult1 por ultimo o modal m\'e1ritimo n\'e3o difere muito dos outros dois, um veiculo m\'e1ritimo consome em uma media aproximada 0,15 litros de \'f3leo combust\'edvel por km percorrido, sua emis\'e3o \'e9 de em media 2.63 kg de CO2/L e em rela\'e7\'e3o a emiss\'e3o de CO2 adicional por kg transportado s\'e3o emitidos em media: 1 kg de CO2 a cada 1000 kg transportado e em rela\'e7\'e3o a emiss\'e3o de CO2 adicional por m\'b3 transportado s\'e3o emitidos em media:  0,05 kg de CO2 para cada 1 m\'b3 transportado.\par
+para exemplo um percurso de 8455 km, onde a carga transportada tem peso de 120000 kg e volume de 325 m\'b3:\par
+o primeiro passo seria calcular o total de litros gastos na viagem:  8455 km * 0.15 litros/km  = 1268.25 litros\par
+no segundo passo basta calcular a quantidade total de CO2 emitida: 1268.25 litros * 2.63 CO2e/litro = 3335.49 CO2e\par
+a seguir calcule o CO2e do peso transportado: (120000 kg / 1000) * 1 CO2e/kg = 120 CO2e\par
+e tamb\'e9m do volume transportado: 325 m\'b3 * 0.05 CO2e/m\'b3 = 16.25 CO2e\par
+no final basta somar todo o CO2e (CO2e no deslocamento + CO2e do kg transportado  + CO2e do m\'b3 transportado):  3335.49 + 120 + 16.25 = 3471.74 CO2e.\par
+\par
+\par
+\par
+\par
+}
+ 

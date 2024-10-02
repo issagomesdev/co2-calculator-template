@@ -1,0 +1,48 @@
+
+.panel-container {
+    >.container {
+        >.instructions {
+            >h2 {
+                margin: 0;
+                .return {
+                    text-decoration: none;
+                }
+            }
+            >p {
+                margin: 0;
+            }
+        }
+        >.filters {
+            display: flex;
+            align-items: center;
+            margin: 1em 0;
+            >.filter {
+                display: flex;
+                align-items: center;
+                padding: 5px 15px;
+                background-color: var(--background-color);
+                margin-left: 10px;
+                border-radius: 4px;
+                box-shadow: var(--shadow);
+                cursor: pointer;
+                >span {
+                    margin: 0 5px;
+                }
+            }
+        }
+        >.charts {
+            >.chart {
+                background-color: var(--background-color);
+                border-radius: 4px;
+                box-shadow: var(--shadow);
+                padding: 15px;
+                margin: 1em 0;
+                width: 95%;
+                min-height: 10em;
+                >p {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

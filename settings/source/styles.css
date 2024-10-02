@@ -1,0 +1,54 @@
+.form-container{
+    margin-top: 2em;
+    >.header{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1em;
+        >.infos {
+            >h2{
+                margin: 0;
+                font-weight: 500;
+                font-style: normal;
+                font-size: 1.4em;
+            }
+            >p {
+                margin: 0;
+                font-weight: 500;
+                font-style: normal;
+                color: #7D7D7D;
+            }
+        }
+    }
+    >.form-content {
+        >.instructions {
+            margin-bottom: 2em;
+            >h4 {
+                color: #767676;
+                font-weight: 500;
+                margin: 0.5em 0;
+            }
+            >p {
+                color: #767676;
+                margin: 0.3em 0;
+            }
+        }
+
+        .questions {
+            margin: 0.2em 0 1em 0;
+        }
+       
+    }
+}
+
+.actions {
+    border-top: 1px solid #cecece;
+    padding-top: 1em;
+    >button {
+        border: navajowhite;
+        padding: 1em 2em;
+        border-radius: 4px;
+        color: var(--background-color);
+        background-color: var(--primary-color);
+        cursor: pointer;
+    }
+}

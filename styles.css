@@ -1,0 +1,208 @@
+.panel-container{
+    >.header{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 3em;
+        >.infos {
+            >h2{
+                margin: 0;
+                font-weight: 500;
+                font-style: normal;
+            }
+            >p {
+                margin: 0;
+                font-weight: 500;
+                font-style: normal;
+                color: #7D7D7D;
+            }
+        }
+        >.filters {
+            position: relative;
+            >.by-year {
+                background-color: var(--primary-color);
+                border-radius: 4px;
+                box-shadow: var(--shadow);
+                padding: 5px 10px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                >p, iconify-icon {
+                    color: var(--background-color);
+                    margin: 0;
+                }
+                >p{
+                    margin-left: 5px;
+                    user-select: none;
+                }
+            }
+            >.options{
+                background-color: var(--background-color);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 10px;
+                border-radius: 4px;
+                box-shadow: var(--shadow);
+                width: 10em;
+                position: absolute;
+                right: 30px;
+                z-index: 9;
+                display: none;
+                >.item {
+                    cursor: pointer;
+                    width: 100%;
+                    >p {
+                        margin: 10px;
+                        user-select: none;
+                    }
+                }
+                >.item:hover {
+                    background-color: #0000002d;
+                }
+            }
+            >.options.show {
+                display: block;
+            }
+        }
+    }
+    >.panel-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto;
+        padding-bottom: 5em;
+        >.header {
+            display: flex;
+            width: 90%;
+            >.items {
+                display: flex;
+                >.item {
+                    justify-content: space-between;
+                    margin-right: 10px; /* Adicione uma margem direita */
+                    flex-grow: 1;
+                    margin: 0 0 0 2.5em;
+                    >p {
+                        white-space: nowrap;
+                        user-select: none;
+                    }
+                }
+            }
+            >#months {
+                >.item {
+                margin: 0 0 0 2.5em;
+                }
+            }
+        }
+        >.content {
+            width: 90%;
+            background-color: transparent;
+            min-height: 100px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            position: relative;
+            
+            >.columns {
+                >.column {
+                    height: 4.5em;
+                    display: flex;
+                    margin: 10px;
+                    align-items: center;
+                    >iconify-icon {
+                        margin-right: 10px;
+                    }
+                    >p {
+                        font-weight: 600;
+                        width: 150px;
+                    }
+                }
+            }
+            >.columns#values, .columns#total {
+                background-color: var(--background-color);
+                box-shadow: var(--depth);
+                height: 90%;
+                display: flex;
+                >.columns-values {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    margin: 0 2.25em 0 0;
+                    >.column{
+                        height: 5em;
+                        display: flex;
+                        align-items: center;
+                        >.values {
+                            width: 2em;
+                            height: 3em;
+                            border-radius: 4px; 
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            >p {
+                                user-select: none;
+                            }
+                        }
+                    }
+                }
+            }
+            >.columns#actions {
+                background-color: var(--background-color);
+                box-shadow: var(--depth);
+                >.actions {
+                    height: 5em;
+                    width: 5em;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    cursor: pointer;
+                    >.container {
+                        position: absolute;
+                        background-color: var(--contrast-color);
+                        box-shadow: 0 0 #0000,0 0 #0000,0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1)!important;
+                        padding: 20px 10px;
+                        border-radius: 4px;
+                        top: 3.8em;
+                        left: -1em;
+                        z-index: 9;
+                        >.option {
+                            display: flex;
+                            align-items: center;
+                            >a {
+                                white-space: nowrap;
+                                margin: 0 0 0 5px;
+                                user-select: none;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+                >.actions.hidden .container {
+                    display: none;
+                }
+                >.actions.show .container {
+                    display: block;
+                }
+            } 
+            >.columns#values .columns-values .column .values {
+                            background-color: var(--contrast-color);
+                            box-shadow: var(--shadow);
+            }
+            >#source {
+                background-color: var(--background-color);
+                box-shadow: var(--depth);
+                height: 30em;
+                >.column {
+                    >p{
+                        user-select: none;
+                    }
+                }
+            }
+
+            
+        }
+    }
+}
+
